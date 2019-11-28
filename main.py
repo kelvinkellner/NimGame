@@ -8,7 +8,7 @@ def print_heaps(heaps):
 
 # One turn for a given player
 def turn(name):
-  print("\n\n{:s}'s turn!".format(name))
+  print("\n\n\n{:s}'s turn!\n".format(name))
 
   print_heaps(heaps)
 
@@ -34,7 +34,7 @@ def turn(name):
     print("\nYour turn is over.")
     return False
   else:
-    print("\n\nGAME OVER.\n{:s} has lost the game!\n".format(name))
+    print("\n\n\nGAME OVER.\n{:s} has lost the game!\n\n".format(name))
     return True
 
 
