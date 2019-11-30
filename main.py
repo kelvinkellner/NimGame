@@ -1,5 +1,8 @@
 heaps = [3,4,5]
 
+YES_PHRASES = ["y","yes","sure","ok","okay","yes please","alright","bet"]
+NO_PHRASES = ["n","no","nah","nahhh","nope","no thank you"]
+
 # Prints a visual display of all the heaps
 def print_heaps(heaps):
   for i in range(len(heaps)):
@@ -40,9 +43,15 @@ def turn(name):
 def new_game():
   print("\n\nWelcome to Nim!\nThis is a two-player thinking game coded using Python.")
   print("\n\nHow this game works:\nEither player takes turns taking 1-3 coins from any one heap of their choosing.\nWhichever player takes the last coin loses the game.")
-  players_qty = ""
-  while (not players_qty.isdigit()) or players_qty == "0" or players_qty == "1":
-    players_qty = input(" > ")
+  
+  said_bot = ""
+  while said_bot not in YES_PHRASES and said_bot not in NO_PHRASES:
+    print("\nNim is a two-player game.\nYou can choose to play against a bot, or against a friend.\n\n\nWould you like to play against a bot?")
+    said_bot = input(" > ").lower()
+  if said_bot in YES_PHRASES:
+    bot = True
+  else:
+    bot = False
 
 new_game()
 
